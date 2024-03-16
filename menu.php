@@ -1,41 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>food menu</title>
-
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-
+<?php
+   include "inc/head.inc.php";
+?>
 </head>
 <body>
-   
-<header class="header">
-   <section class="flex">
-      <a href="home.html" class="logo"><img src="images/Icons/CafeLogo.png" alt="Cat WebCafe Logo" width="100" height="100"></a>
-      <nav class="navbar">
-        <a href="menu.html">Menu</a>
-        <a href="orders.html">Orders</a>
-         <a href="about.html">About Us</a>
-         <a href="contact.html">Contact Us</a>
-      </nav>
-
-      <div class="icons">
-         <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="menu-btn" class="fas fa-bars"></div>
-      </div>
-   </section>
-</header>
-
+<?php
+    include "inc/header.inc.php";
+?>
 <div class="heading">
    <h3>our menu</h3>
-   <p><a href="home.html">Home </a> <span> / Menu</span></p>
+   <p><a href="home.php">Home </a> <span> / Menu</span></p>
 </div>
 
 <section class="products">
@@ -95,12 +71,9 @@
    </div>
 
 </section>
-
-
-<footer class="footer">
-   <div class="credit"> Website by <span>P6 Group 8</span></div>   
-</footer>
-
+<?php
+   include "inc/footer.inc.php";
+?>
 <div class="loader">
    <img src="images/loader.gif" alt="">
 </div>
