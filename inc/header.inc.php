@@ -1,7 +1,7 @@
 <header class="header">
 
    <section class="flex">
-      <a href="home.php" class="logo"><img src="images/Icons/CafeLogo.png" alt="Cat WebCafe Logo" width="100" height="100"></a>
+      <a href="home.php" class="logo"><img src="images/Icons/CafeLogo2.png" alt="Cat WebCafe Logo" width="100" height="100"></a>
       <nav class="navbar">
         <a href="menu.php">Menu</a>
         <a href="orders.php">Orders</a>
