@@ -34,6 +34,10 @@
             <label for="pwd_confirm" class="form-label">Confirm Password:</label>
             <input required type="password" id="pwd_confirm" name="pwd_confirm" class="form-control" placeholder="Confirm password">
         </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address:</label>
+            <input required type="address" id="add" name="add" class="form-control" placeholder="enter address">
+        </div>
         <div class="mb-3 form-check">
             <input type="checkbox" name="agree" id="agree" class="form-check-input">
             <label required class="form-check-label" for="agree">Agree to terms and conditions.</label>

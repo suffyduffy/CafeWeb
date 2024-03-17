@@ -1,5 +1,5 @@
 <?php
-$lastName = $email = $password = $confirmPassword = $errorMsg = "";
+$lastName = $email = $password = $confirmPassword = $address = $errorMsg = "";
 $success = true;
 
 // Function to sanitize input
@@ -54,6 +54,14 @@ if (empty($_POST["pwd_confirm"])) {
     }
 }
 
+// Validate address
+if (empty($_POST["add"])) {
+    $errorMsg .= "Address is required.<br>";
+    $success = false;
+} else {
+    $password = $_POST["add"];
+}
+
 if ($success) {
     // Hash the password before storing it
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -87,6 +95,7 @@ function saveMemberToDB()
             $config['servername'],
             $config['username'],
             $config['password'],
+            $config['address'],
             $config['dbname']
         );
         // Check connection
@@ -98,9 +107,9 @@ function saveMemberToDB()
         else
         {
             // Prepare the statement:
-            $stmt = $conn->prepare("INSERT INTO world_of_pets_members (fname, lname, email, password) VALUES (?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO Cafeweb (fname, lname, email, password, address) VALUES (?, ?, ?, ?)");
             // Bind & execute the query statement:
-            $stmt->bind_param("ssss", $firstName, $lastName, $email, $hashedPassword);
+            $stmt->bind_param("ssss", $firstName, $lastName, $email, $hashedPassword, $address);
             if (!$stmt->execute())
             {
                 $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
