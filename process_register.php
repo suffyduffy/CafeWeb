@@ -1,5 +1,5 @@
 <?php
-$lastName = $email = $password = $confirmPassword =  $errorMsg = "";
+$lastName = $email = $password = $confirmPassword =  $address = $errorMsg = "";
 $success = true;
 
 // Function to sanitize input
@@ -10,13 +10,13 @@ function sanitize_input($data) {
     return $data;
 }
 
-// // Validate first name
-// if (empty($_POST["fname"])) {
-//     $errorMsg .= "Don't have a first name? Weirdo.<br>";
-//     $success = false;
-// } else {
-//     $firstName = sanitize_input($_POST["fname"]);
-// }
+// Validate first name
+if (empty($_POST["fname"])) {
+    $errorMsg .= "Don't have a first name? Weirdo.<br>";
+    $success = false;
+} else {
+    $firstName = sanitize_input($_POST["fname"]);
+}
 
 // Validate last name
 if (empty($_POST["lname"])) {
@@ -48,13 +48,13 @@ if (empty($_POST["pwd_confirm"])) {
     }
 }
 
-// // Validate address
-// if (empty($_POST["address"])) {
-//     $errorMsg .= "Address is required.<br>";
-//     $success = false;
-// } else {
-//     $address = $_POST["address"];
-// }
+// Validate address
+if (empty($_POST["address"])) {
+    $errorMsg .= "Address is required.<br>";
+    $success = false;
+} else {
+    $address = $_POST["address"];
+}
 
 
 // Validate email
@@ -91,7 +91,7 @@ if ($success) {
 // Helper function to write the member data to the database.
 function saveMemberToDB()
 {
-    global $lastName, $email, $hashedPassword, $errorMsg, $success;
+    global $lastName, $email, $hashedPassword, $errorMsg, $address,$firstName, $success;
     // Create database connection.
     $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config)
@@ -116,9 +116,9 @@ function saveMemberToDB()
         else
         {
             // Prepare the statement:
-            $stmt = $conn->prepare("INSERT INTO cafe_members (fname, lname, password, address, email) VALUES (?,?,?,?,?)");
+            $stmt = $conn->prepare("INSERT INTO cafe_members (fname, lname, email, password, address) VALUES (?,?,?,?,?)");
             // Bind & execute the query statement:
-            $stmt->bind_param("sssss", $firstName, $lastName, $hashedPassword, $address, $email);
+            $stmt->bind_param("sssss", $firstName, $lastName, $email, $hashedPassword, $address);
             if (!$stmt->execute())
             {
                 $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
@@ -131,3 +131,32 @@ function saveMemberToDB()
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<?php
+   include "inc/head.inc.php";
+?>
+</head>
+<body>
+<?php
+   include "inc/header.inc.php";
+?>
+<section class="form-container">
+    <h3>Registered Successful</h3>
+    
+    <p>Thank you for signing up</p>
+
+    <a href="login.php"><button style="background-color: green; color: white;">Log In</button></a>
+
+</section>
+
+    <?php 
+        include "inc/footer.inc.php"; 
+    ?>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
