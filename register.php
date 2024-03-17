@@ -1,52 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <?php
-        include "inc/head.inc.php";
-    ?>
+<?php
+   include "inc/head.inc.php";
+?>
 </head>
 <body>
-    <?php
-        include "inc/nav.inc.php";  
-    ?>
-    <main class="container">
-        <h1>Member Registration</h1>
-        <p>
-            For existing members, please go to the
-            <a href="login.php">Sign In page</a>.
-        </p>
-        <form action="process_register.php" method="post">
-        <div class="mb-3">
-            <label for="fname" class="form-label">First Name:</label>
-            <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter first name">
-        </div>
-        <div class="mb-3">
-            <label for="lname" class="form-label">Last Name:</label>
-            <input required maxlength="45" type="text" id="lname" name="lname" class="form-control" placeholder="Enter last name">
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input required type="email" id="email" name="email" class="form-control" placeholder="Enter email">
-        </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Password:</label>
-            <input required type="password" id="pwd" name="pwd" class="form-control" placeholder="Enter password">
-        </div>
-        <div class="mb-3">
-            <label for="pwd_confirm" class="form-label">Confirm Password:</label>
-            <input required type="password" id="pwd_confirm" name="pwd_confirm" class="form-control" placeholder="Confirm password">
-        </div>
-        <div class="mb-3">
-            <label for="address" class="form-label">Address:</label>
-            <input required type="address" id="add" name="add" class="form-control" placeholder="enter address">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" name="agree" id="agree" class="form-check-input">
-            <label required class="form-check-label" for="agree">Agree to terms and conditions.</label>
-        </div>
-        <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        </form>
-    </main>
+<?php
+   include "inc/header.inc.php";
+?>
+<section class="form-container">
+   <form action="process_register.php" method="post">
+      <h3>Register Now</h3>
+    <input type="text" name="fname" placeholder="Enter your name" class="box" maxlength="50">
 
-    <?php include "inc/footer.inc.php"; ?>
+    <input type="text" name="lname" required placeholder="Enter your last name" class="box" maxlength="50">
+
+    <input type="password" name="password" required placeholder="Enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+
+    <input type="password" name="pwd_confirm" required placeholder="Confirm your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+
+    <input type="text" name="address" required placeholder="Enter your address" class="box" maxlength="255">
+
+    <input type="email" name="email" required placeholder="Enter your email" class="box" maxlength="255" oninput="this.value = this.value.replace(/\s/g, '')">
+
+    <input type="submit" value="Register now" name="submit" class="btn">
+
+    <p>Already have an account? <a href="login.php">Login Now</a></p>
+</form>
+</section>
+
+    <?php 
+        include "inc/footer.inc.php"; 
+    ?>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
 </body>
+</html>

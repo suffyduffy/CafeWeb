@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-        include "inc/head.inc.php";
-    ?>
+<?php
+   include "inc/head.inc.php";
+?>
 </head>
 <body>
-    <?php include "inc/nav.inc.php"; ?>
+<?php
+    include "inc/header.inc.php";
+?>
+<section class="form-container">
 
-    <main class="container">
-        <h1>Member Login</h1>
-        <p>
-            Existing member log in here. For existing members, please go to 
-            <a href="register.php">Member Registration Page</a>.
-        </p>
-        <form action="process_login.php" method="post">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input required type="email" id="email" name="email" class="form-control" placeholder="Enter email">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input required type="password" id="password" name="password" class="form-control" placeholder="Enter password">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    </main>
+   <form action="process_login.php" method="post">
+      <h3>Login Now</h3>
+      <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="password" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="login now" name="submit" class="btn">
+      <p>Don't have an account? <a href="register.php">Register now</a></p>
+   </form>
 
-    <?php include "inc/footer.inc.php"; ?>
-</body>
-</html>
+</section>
+<?php
+   include "inc/footer.inc.php";
+?>
