@@ -1,5 +1,5 @@
 <?php
-$lastName = $email = $password = $confirmPassword = $address = $errorMsg = "";
+$lastName = $email = $password = $confirmPassword =  $errorMsg = "";
 $success = true;
 
 // Function to sanitize input
@@ -10,6 +10,14 @@ function sanitize_input($data) {
     return $data;
 }
 
+// // Validate first name
+// if (empty($_POST["fname"])) {
+//     $errorMsg .= "Don't have a first name? Weirdo.<br>";
+//     $success = false;
+// } else {
+//     $firstName = sanitize_input($_POST["fname"]);
+// }
+
 // Validate last name
 if (empty($_POST["lname"])) {
     $errorMsg .= "Last name is required.<br>";
@@ -18,26 +26,12 @@ if (empty($_POST["lname"])) {
     $lastName = sanitize_input($_POST["lname"]);
 }
 
-// Validate email
-if (empty($_POST["email"])) {
-    $errorMsg .= "Email is required.<br>";
-    $success = false;
-} else {
-    $email = sanitize_input($_POST["email"]);
-
-    // Additional check to make sure email address is well-formed.
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMsg .= "Invalid email format.<br>";
-        $success = false;
-    }
-}
-
 // Validate password
-if (empty($_POST["pwd"])) {
+if (empty($_POST["password"])) {
     $errorMsg .= "Password is required.<br>";
     $success = false;
 } else {
-    $password = $_POST["pwd"];
+    $password = $_POST["password"];
 }
 
 // Validate password confirmation
@@ -54,13 +48,29 @@ if (empty($_POST["pwd_confirm"])) {
     }
 }
 
-// Validate address
-if (empty($_POST["add"])) {
-    $errorMsg .= "Address is required.<br>";
+// // Validate address
+// if (empty($_POST["address"])) {
+//     $errorMsg .= "Address is required.<br>";
+//     $success = false;
+// } else {
+//     $address = $_POST["address"];
+// }
+
+
+// Validate email
+if (empty($_POST["email"])) {
+    $errorMsg .= "Email is required.<br>";
     $success = false;
 } else {
-    $password = $_POST["add"];
+    $email = sanitize_input($_POST["email"]);
+
+    // Additional check to make sure email address is well-formed.
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMsg .= "Invalid email format.<br>";
+        $success = false;
+    }
 }
+
 
 if ($success) {
     // Hash the password before storing it
@@ -95,7 +105,6 @@ function saveMemberToDB()
             $config['servername'],
             $config['username'],
             $config['password'],
-            $config['address'],
             $config['dbname']
         );
         // Check connection
@@ -107,13 +116,14 @@ function saveMemberToDB()
         else
         {
             // Prepare the statement:
-            $stmt = $conn->prepare("INSERT INTO Cafeweb (fname, lname, email, password, address) VALUES (?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO cafe_members (fname, lname, password, address, email) VALUES (?,?,?,?,?)");
             // Bind & execute the query statement:
-            $stmt->bind_param("ssss", $firstName, $lastName, $email, $hashedPassword, $address);
+            $stmt->bind_param("sssss", $firstName, $lastName, $hashedPassword, $address, $email);
             if (!$stmt->execute())
             {
                 $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
                 $success = false;
+                echo $errorMsg;
             }
             $stmt->close();
         }
