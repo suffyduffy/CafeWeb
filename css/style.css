@@ -804,14 +804,6 @@ section{
 }
 
 
-
-
-
-
-
-
-
-
 .footer .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
@@ -870,17 +862,6 @@ section{
 .loader img{
    width: 35rem;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width:991px){
 
