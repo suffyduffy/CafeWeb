@@ -14,7 +14,7 @@ function sanitize_input($data) {
 if (empty($_POST["email"])) {
     $errorMsg .= "Email is required.<br>";
     $success = false;
-} else {c:\Users\miner\OneDrive\Documents\SIT\Web Sys\Lab09\process_register.php
+} else {
     $email = sanitize_input($_POST["email"]);
 
     // Additional check to make sure email address is well-formed.
