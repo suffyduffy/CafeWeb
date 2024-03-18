@@ -10,7 +10,7 @@
       </nav>
 
       <div class="icons">
-         <a href="register.php"><i class="fas fa-shopping-cart"></i></a>
+         <a href="login.php"><i class="fas fa-shopping-cart"></i></a>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="menu-btn" class="fas fa-bars"></div>
       </div>
