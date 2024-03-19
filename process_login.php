@@ -38,9 +38,8 @@ if ($success) {
 
     if ($success) {
         // User authentication successful
-        echo "<h4>Login successful!</h4>";
-        echo "<p>Welcome back, $fname $lname!</p>";
-        echo '<a href="index.php"><button style="background-color: green; color: white;">Return to Home</button></a>';
+        echo "Login Successful";
+        header("Location: home.php");
     } else {
         // User authentication failed
         echo "<h4>Oops!</h4>";
@@ -58,7 +57,7 @@ if ($success) {
 // Helper function to authenticate the login.
 function authenticateUser()
 {
-    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
+    global $fname, $lname, $email, $pwd_hashed, $address, $errorMsg, $success;
 
     // Create database connection.
     $config = parse_ini_file('/var/www/private/db-config.ini');
@@ -84,7 +83,7 @@ function authenticateUser()
         else
         {
             // Prepare the statement:
-            $stmt = $conn->prepare("SELECT * FROM world_of_pets_members WHERE email=?");
+            $stmt = $conn->prepare("SELECT * FROM cafe_members WHERE email=?");
             // Bind & execute the query statement:
             $stmt->bind_param("s", $email);
             $stmt->execute();
@@ -97,18 +96,19 @@ function authenticateUser()
                 $fname = $row["fname"];
                 $lname = $row["lname"];
                 $pwd_hashed = $row["password"];
+                $address = $row["address"];
                 // Check if the password matches:
                 if (!password_verify($_POST["password"], $pwd_hashed))
                 {
                     // Don't be too specific with the error message - hackers don't
                     // need to know which one they got right or wrong. :)
-                    $errorMsg = "Email not found or password doesn't match...";
+                    $errorMsg = "User not found or password doesn't match";
                     $success = false;
                 }
             }
             else
             {
-                $errorMsg = "Email not found or password doesn't match...";
+                $errorMsg = "User not found or password doesn't match";
                 $success = false;
             }
             $stmt->close();

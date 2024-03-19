@@ -7,6 +7,14 @@
    --black:#222;
    --light-color:#777;
    --border:.2rem solid var(--black);
+   
+   /* website colour choice */
+   --taupe-gray:#8E9189;
+   --purple-taupe:#494449;
+   --rocket-metallic:#857F74;
+   --isabelline:#EEEFEB;
+   --pale-spring-bud:#DDEAC1;
+
 }
 
 *{
@@ -19,7 +27,7 @@
 }
 
 *::selection{
-   background-color: var(--yellow);
+   background-color: var(--rocket-metallic);
    color:var(--black);
 }
 
@@ -40,7 +48,7 @@ html{
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: var(--yellow);
+   background-color: var(--pale-spring-bud);
    border-radius: 5rem;
 }
 
