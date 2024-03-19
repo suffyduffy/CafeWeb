@@ -1,4 +1,5 @@
 <?php
+session_start(); // Start the session at the beginning
 $email = $password = $errorMsg = "";
 $success = true;
 
@@ -38,20 +39,29 @@ if ($success) {
 
     if ($success) {
         // User authentication successful
+        $_SESSION['email'] = $email; // Store email in session
+        $_SESSION['fname'] = $fname; // Store first name in session
+        $_SESSION['lname'] = $lname; // Store last name in session
+        $_SESSION['address'] = $address; // Store address in session
+
         echo "Login Successful";
         header("Location: home.php");
+        exit();
     } else {
         // User authentication failed
         echo "<h4>Oops!</h4>";
         echo "<h4>The following input errors were detected:</h4>";
         echo "<p>$errorMsg</p>";
         echo '<a href="login.php"><button style="background-color: yellow; color: white;">Return to Login</button></a>';
+        $_SESSION['login_error'] = $errorMsg;
     }
 } else {
     echo "<h4>Oops!</h4>";
     echo "<h4>The following input errors were detected:</h4>";
     echo "<p>$errorMsg</p>";
     echo '<a href="login.php"><button style="background-color: yellow; color: white;">Return to Login</button></a>';
+    $_SESSION['login_error'] = $errorMsg;
+    exit();
 }
 
 // Helper function to authenticate the login.

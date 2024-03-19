@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php
+   session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
 ?>
 </head>

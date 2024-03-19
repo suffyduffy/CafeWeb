@@ -922,5 +922,14 @@ section{
    .products .box-container{
       grid-template-columns: 1fr;
    }
+/* 
+   .icons {
+      display: flex; /* Use flexbox to arrange icons */
+      align-items: center; /* Center items vertically */
+   }
+   
+   .user-name {
+      margin-right: 10px; /* Add spacing between user name and icons */
+   } */
 
 }

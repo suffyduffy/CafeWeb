@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php
+   session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
    $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config)
@@ -36,7 +37,8 @@
 </head>
 <body>
 <?php
-    include "inc/header.inc.php";
+   session_start(); // Start the session at the beginning
+   include "inc/header.inc.php";
 ?>
 <div class="heading">
    <h3>Our Menu</h3>
