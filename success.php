@@ -14,7 +14,7 @@
         <div class="content">
             <h3>Registration Successful</h3>
             <p>Thanks for joining us!</p>
-            <a href="home.php" class="btn">Back Home</a>
+            <a href="login.php" class="btn">Log In</a>
         </div>
     </div>
 </section>

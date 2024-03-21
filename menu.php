@@ -57,7 +57,7 @@
             $foodName = $row["foodName"];
             $foodPrice = $row["foodPrice"];
     ?>
-            <form action="process_order.php" method="post" class="food-form">
+            <form action="add_cart.php" method="post" class="food-form">
                 <input type="hidden" name="foodName" value="<?= $foodName ?>">
                 <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
                 <article class="food-product">
