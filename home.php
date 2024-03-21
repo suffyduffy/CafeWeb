@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php
+    session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
 ?>
 </head>
@@ -9,7 +10,12 @@
 <?php
     include "inc/header.inc.php";
 ?>
+
 <section class="home">
+
+   <video autoplay loop muted plays-inline class="back-video">
+      <source src="video.mp4" type="video/mp4">
+   </video>
 
    <div class="swiper home-slider">
 

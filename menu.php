@@ -2,15 +2,46 @@
 <html lang="en">
 <head>
 <?php
+   session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
+   $config = parse_ini_file('/var/www/private/db-config.ini');
+    if (!$config)
+    {
+        $errorMsg = "Failed to read database config file.";
+        $success = false;
+    }
+    else
+    {
+        $conn = new mysqli(
+            $config['servername'],
+            $config['username'],
+            $config['password'],
+            $config['dbname']
+        );
+        // Check connection
+        if ($conn->connect_error)
+        {
+            $errorMsg = "Connection failed: " . $conn->connect_error;
+            $success = false;
+        }
+        else
+        {
+            // Fetch food products from the database
+            $sql = "SELECT foodName, foodPrice FROM foodItems";
+            $result = $conn->query($sql);
+        }
+        $conn->close();
+    }
+
 ?>
 </head>
 <body>
 <?php
-    include "inc/header.inc.php";
+   session_start(); // Start the session at the beginning
+   include "inc/header.inc.php";
 ?>
 <div class="heading">
-   <h3>our menu</h3>
+   <h3>Our Menu</h3>
    <p><a href="home.php">Home </a> <span> / Menu</span></p>
 </div>
 
@@ -19,55 +50,33 @@
    <h1 class="title">All Menu</h1>
 
    <div class="box-container">
-      <article class="food-product">
-         <h3>Beef Lasagna</h3>
-         <figure>
-                 <img src="images/Food/Lasagna.jpg" alt="Beef Lasagna" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>Pepperoni Pizza</h3>
-         <figure>
-                 <img src="images/Food/pizza.jpg" alt="Pizza" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>Spicy Chicken</h3>
-         <figure>
-                 <img src="images/Food/wholeChicken.png" alt="Chicken" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>Beef Star Burger</h3>
-         <figure>
-                 <img src="images/Food/beefBurger.png" alt="Burger" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>HomeMade Fruitpunch</h3>
-         <figure>
-                 <img src="images/Food/drink-4.png" alt="Fruitpunch" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>HomeMade Orange Juice</h3>
-         <figure>
-                 <img src="images/Food/drink-1.png" alt="Orange" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>White Coffee</h3>
-         <figure>
-                 <img src="images/Food/drink-2.png" alt="Coffee" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-      <article class="food-product">
-         <h3>Strawberry Frappe</h3>
-         <figure>
-                 <img src="images/Food/dessert-1.png" alt="Frappe" class="food-thumbnail" width="200" height="200"/>
-         </figure>
-      </article>
-
+   <?php
+    // Check if there are any products fetched from the database
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $foodName = $row["foodName"];
+            $foodPrice = $row["foodPrice"];
+    ?>
+            <form action="process_order.php" method="post" class="food-form">
+                <input type="hidden" name="foodName" value="<?= $foodName ?>">
+                <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
+                <article class="food-product">
+                    <h2><?= $foodName ?></h2>
+                    <p>Price: $<?= $foodPrice ?></p>
+                    <figure>
+                        <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
+                    </figure>
+                    <button type="submit" class="btn-order">Order Now</button>
+                </article>
+            </form>
+    <?php
+        }
+    } else {
+        echo "No products found.";
+    }
+    $conn->close();
+    ?>
+   
    </div>
 
 </section>
