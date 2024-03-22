@@ -66,7 +66,7 @@
                     <figure>
                         <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
                     </figure>
-                    <button type="submit" class="btn-order">Order Now</button>
+                    <button type="submit" class="btn-order">Add To Cart</button>
                 </article>
             </form>
     <?php

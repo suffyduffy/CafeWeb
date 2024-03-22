@@ -16,9 +16,9 @@
 
     <input type="text" name="lname" required placeholder="Enter your last name" class="box" maxlength="50">
 
-    <input type="password" name="password" required placeholder="Enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+    <input type="password" name="password" required placeholder="Enter your password" class="box" minlength="8" oninput="this.value = this.value.replace(/\s/g, '')">
 
-    <input type="password" name="pwd_confirm" required placeholder="Confirm your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+    <input type="password" name="pwd_confirm" required placeholder="Confirm your password" class="box" minlength="8" oninput="this.value = this.value.replace(/\s/g, '')">
 
     <input type="text" name="address" required placeholder="Enter your address" class="box" maxlength="255">
 
