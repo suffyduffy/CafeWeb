@@ -17,6 +17,7 @@
 
 }
 
+
 *{
    font-family: 'Rubik', sans-serif;
    margin:0; padding:0;
@@ -57,6 +58,33 @@ section{
    margin:0 auto;
    padding:2rem;
 }
+.video {
+   position: relative;
+   overflow: hidden;
+}
+.video .video-container { 
+   position: absolute; /* Or absolute, depending on your layout */ 
+   top: 0; 
+   right: 0; 
+   bottom: 0; 
+   left: 0; 
+   padding-bottom: 75%;
+   overflow: hidden; 
+   z-index: -1; /* Ensures it stays behind other content */ 
+} 
+ 
+/* Ensures the video fills the container */ 
+.video .video-container iframe { 
+   position: absolute; 
+   top: 50%; 
+   left: 50%; 
+   width: auto; 
+   height: auto; 
+   min-width: 100%; 
+   min-height: 100%; 
+   transform: translate(-50%, -50%); 
+   object-fit: cover; 
+}
 
 .delete-btn,
 .btn{
@@ -76,6 +104,9 @@ section{
 .btn{
    background-color: var(--yellow);
    color:var(--black);
+}
+#next-section {
+   margin-top: 20px; /* Adjust the margin as needed */
 }
 
 .delete-btn:hover,
@@ -211,6 +242,7 @@ section{
    display: none;
 }
 
+
 .home .slide{
    display: flex;
    flex-wrap: wrap-reverse;
@@ -243,6 +275,8 @@ section{
    color:var(--black);
    padding:1rem 0;
 }
+
+
 
 .swiper-pagination-bullet-active{
    background-color: var(--yellow);
@@ -527,6 +561,22 @@ section{
    margin-top: 1.5rem;
 }
 
+.contact-info h3 {
+   font-size: 32px;
+   color: #000; /* Change the color */
+   margin-right: 8px; /* Add some spacing to the right of the icon */
+ }
+
+.contact-info {
+   font-size: 24px; /* Adjust the font size as needed */
+ }
+
+.contact-info i {
+   font-size: 24px;
+   color: #333; /* Change the color */
+   margin-right: 8px; /* Add some spacing to the right of the icon */
+ }
+ 
 .contact .row{
    display: flex;
    align-items: center;
@@ -931,4 +981,37 @@ section{
    .user-name {
       margin-right: 10px; /* Add spacing between user name and icons */
    }
+   .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+  }
+  
+  .btn-return-signup {
+      background-color: red;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+  
+  .btn-return-signup:hover {
+      background-color: #dc3545;
+  }
+
+  .controls {
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.controls .prev-btn,
+.controls .next-btn {
+   padding: 0.5rem 1rem;
+   margin: 0 0.5rem;
+   cursor: pointer;
+}
+
+  
 }

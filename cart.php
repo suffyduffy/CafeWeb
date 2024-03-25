@@ -77,20 +77,22 @@ include "inc/header.inc.php";
             $foodName = $row["foodName"];
             $foodPrice = $row["foodPrice"];
       ?>
-            <div class="food-product">
-            <form action="" method="post" class="food-form">
+        <div class="food-product">
+            <form action="process_delete.php" method="post" class="food-form">
+                <input type="hidden" name="cartID" value="<?= $cartID ?>">
+                <input type="hidden" name="member_id" value="<?= $member_id ?>">
                 <input type="hidden" name="foodName" value="<?= $foodName ?>">
-                <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
                 <article class="food-product">
                     <h1><?= $foodName ?></h1>
                     <p>Price: $<?= $foodPrice ?></p>
                     <figure>
                         <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
                     </figure>
-                    <button type="submit" class="btn-order">Checkout</button>
+                    <button type="submit" name="add_to_order" class="btn-order">Add to Order</button>
+                    <button type="submit" name="delete" class="btn-delete">Delete Item</button>
                 </article>
             </form>
-            </div>
+        </div>
       <?php
     }
 } else {

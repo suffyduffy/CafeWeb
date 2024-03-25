@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+        include "inc/head.inc.php";
+    ?>
+</head>
+<body>
 <?php
 session_start(); // Start the session at the beginning
 $email = $password = $errorMsg = "";
@@ -49,17 +57,19 @@ if ($success) {
         exit();
     } else {
         // User authentication failed
-        echo "<h4>Oops!</h4>";
-        echo "<h4>The following input errors were detected:</h4>";
-        echo "<p>$errorMsg</p>";
-        echo '<a href="login.php"><button style="background-color: yellow; color: white;">Return to Login</button></a>';
+        echo '<div class="content">';
+        echo '<h3>The following input errors were detected:</h3>';
+        echo '<p>' . $errorMsg . '</p>';
+        echo '<a href="login.php" class="btn-return-signup">Log In</a>';
+        echo '</div>';
         $_SESSION['login_error'] = $errorMsg;
     }
 } else {
-    echo "<h4>Oops!</h4>";
-    echo "<h4>The following input errors were detected:</h4>";
-    echo "<p>$errorMsg</p>";
-    echo '<a href="login.php"><button style="background-color: yellow; color: white;">Return to Login</button></a>';
+    echo '<div class="content">';
+    echo '<h3>The following input errors were detected:</h3>';
+    echo '<p>' . $errorMsg . '</p>';
+    echo '<a href="login.php" class="btn-return-signup">Return to Log In</a>';
+    echo '</div>';
     $_SESSION['login_error'] = $errorMsg;
     exit();
 }
@@ -127,3 +137,6 @@ function authenticateUser()
     }
 }
 ?>
+</body>
+</html>
+

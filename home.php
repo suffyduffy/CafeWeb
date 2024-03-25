@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php
-    session_start(); // Start the session at the beginning
+<?php    
+   session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
 ?>
 </head>
@@ -10,17 +10,14 @@
 <?php
     include "inc/header.inc.php";
 ?>
-
-<section class="home">
-
-   <video autoplay loop muted plays-inline class="back-video">
-      <source src="video.mp4" type="video/mp4">
-   </video>
-
+   <section class="video">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/aTC_RNYtEb0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=aTC_RNYtEb0" frameborder="0" allow="autoplay; fullscreen"></iframe>
+    </div>
+   </section>
+<section class="home" id="next-section">
    <div class="swiper home-slider">
-
       <div class="swiper-wrapper">
-
          <div class="swiper-slide slide">
             <div class="content">
                <span>Popular!</span>

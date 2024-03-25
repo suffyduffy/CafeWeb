@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+        include "inc/head.inc.php";
+    ?>
+</head>
+<body>
 <?php
 $lastName = $email = $password = $confirmPassword =  $address = $errorMsg = "";
 $success = true;
@@ -81,9 +89,11 @@ if ($success) {
     header("Location: success.php");
 
 } else {
-    echo "<h4>The following input errors were detected:</h4>";
-    echo "<p>" . $errorMsg . "</p>";
-    echo '<a href="register.php"><button style="background-color: red; color: white;">Return to Sign Up</button></a>';
+    echo '<div class="error-message">';
+    echo '<h3>The following input errors were detected:</h3>';
+    echo '<p>' . $errorMsg . '</p>';
+    echo '<a href="register.php" class="btn-return-signup">Return to Sign Up</a>';
+    echo '</div>';
 }
 
 // Helper function to write the member data to the database.
@@ -129,4 +139,7 @@ function saveMemberToDB()
     }
 }
 ?>
+</body>
+</html>
+
 
