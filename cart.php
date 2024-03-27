@@ -56,6 +56,91 @@ if (!$config) {
     $conn->close();
 }
 ?>
+    <style>
+        .btn-order-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+        /* Add border styling to the button */
+        .btn-order {
+            border: 2px solid #333; /* Change border color and width as desired */
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: #fff; /* Button background color */
+            color: #333; /* Button text color */
+            font-size: 32px; /* Adjust font size as needed */
+            margin: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        /* Add hover effect */
+        .btn-order:hover {
+            background-color: #333; /* Change background color on hover */
+            color: #fff; /* Change text color on hover */
+            border-color: #333; /* Change border color on hover */
+        }
+                /* Add border styling to the button */
+        .btn-delete {
+            border: 2px solid #333; /* Change border color and width as desired */
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: #fff; /* Button background color */
+            color: #333; /* Button text color */
+            font-size: 16px; /* Adjust font size as needed */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        /* Add hover effect */
+        .btn-delete:hover {
+            background-color: #333; /* Change background color on hover */
+            color: #fff; /* Change text color on hover */
+            border-color: #333; /* Change border color on hover */
+        }
+
+        /* Add zoom effect to product images */
+        .food-thumbnail {
+            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+        }
+
+        .food-thumbnail:hover {
+            transform: scale(3.3); /* Zoom in by 10% on hover */
+        }
+
+        /* Center align products */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Adjust spacing between products */
+            padding: 20px; /* Add padding around products */
+        }
+
+        .food-product {
+            border: 1px solid #333;
+            background-color: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .food-product:hover {
+            box-shadow: 0 6px 30px rgba(255,0,0,0.7); /* Changes the shadow on hover */
+        }
+        .total-price-container {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        .total-price {
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px; /* Adjust margin as needed */
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -68,38 +153,55 @@ include "inc/header.inc.php";
 
 <section class="products">
 
-   <h1 class="title">Checkout</h1>
-
-   <div class="box-container">
-      <?php
-      if ($select_result->num_rows > 0) {
-         while ($row = $select_result->fetch_assoc()) {
-            $foodName = $row["foodName"];
-            $foodPrice = $row["foodPrice"];
-      ?>
-        <div class="food-product">
-            <form action="process_delete.php" method="post" class="food-form">
-                <input type="hidden" name="cartID" value="<?= $cartID ?>">
-                <input type="hidden" name="member_id" value="<?= $member_id ?>">
-                <input type="hidden" name="foodName" value="<?= $foodName ?>">
-                <article class="food-product">
-                    <h1><?= $foodName ?></h1>
-                    <p>Price: $<?= $foodPrice ?></p>
-                    <figure>
-                        <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
-                    </figure>
-                    <button type="submit" name="add_to_order" class="btn-order">Add to Order</button>
-                    <button type="submit" name="delete" class="btn-delete">Delete Item</button>
-                </article>
-            </form>
+    <h1 class="title">Checkout</h1>
+    <form action="process_checkout.php" method="post">
+        <div class="btn-order-container">
+            <button type="submit" name="checkout_all" class="btn-order">Checkout</button> 
         </div>
-      <?php
-    }
-} else {
-    echo "No products in the cart.";
-}
-?>
-</div>
+    </form>
+    <div class="box-container">
+        <?php
+        $totalPrice = 0;
+
+        if (isset($_POST['checkout_all'])) {
+            header("Location: orders.php");
+            exit();
+        }
+
+        if ($select_result->num_rows > 0) {
+            while ($row = $select_result->fetch_assoc()) {
+                $foodName = $row["foodName"];
+                $foodPrice = $row["foodPrice"];
+
+                // Add each food price to the total
+                $totalPrice += $foodPrice;
+        ?>
+                <div class="food-product">
+                    <form action="process_delete.php" method="post" class="food-form">
+                        <input type="hidden" name="cartID" value="<?= $cartID ?>">
+                        <input type="hidden" name="member_id" value="<?= $member_id ?>">
+                        <input type="hidden" name="foodName" value="<?= $foodName ?>">
+                        <article class="food-product">
+                            <h3 style="text-align: center; font-size: 20px; color: #333;"><?= $foodName ?></h3>
+                            <p style="text-align: center; font-size: 16px; color: #666;">Price: $<?= $foodPrice ?></p>
+                            <figure>
+                                <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
+                            </figure>
+                            <button type="submit" name="delete" class="btn-delete">Delete Item</button>
+                        </article>
+                    </form>
+                </div>
+        <?php
+            }
+            // Display the grand total after looping through all items
+            echo '<div class="total-price-container">';
+            echo '<div class="total-price">Grand Total: $' . number_format($totalPrice, 2) . '</div>';
+            echo '</div>';
+        } else {
+            echo "No products in the cart.";
+        }
+        ?>
+    </div>
 
 </section>
 <?php

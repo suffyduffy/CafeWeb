@@ -8,7 +8,6 @@
 <body>
 <?php
 session_start(); // Start the session at the beginning
-session_start(); // Start the session at the beginning
 $email = $password = $errorMsg = "";
 $success = true;
 
@@ -60,7 +59,6 @@ if ($success) {
 
         echo "Login Successful";
         header("Location: home.php");
-        exit();
         exit();
     } else {
         // User authentication failed

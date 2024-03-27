@@ -12,9 +12,19 @@
 ?>
    <section class="video">
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/aTC_RNYtEb0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=aTC_RNYtEb0" frameborder="0" allow="autoplay; fullscreen"></iframe>
+        <!-- Overlay Text Container (if you still want the text "Beef lasagna" over the video) -->
+        <div class="video-overlay-text">
+            <h3>Welcome to</h3>
+            <h3>CAFE CAZ</h3>
+        </div>
+        
+        <!-- HTML5 Video Tag -->
+        <video autoplay loop muted playsinline id="background-video">
+            <source src="images/intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-   </section>
+</section>
 <section class="home" id="next-section">
    <div class="swiper home-slider">
       <div class="swiper-wrapper">
