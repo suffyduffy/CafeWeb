@@ -3,6 +3,13 @@
     session_start(); // Start the session at the beginning
     include "inc/head.inc.php";
     ?>
+    <style>
+        body {
+            background-image: url('images/background2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+</style>
 </head>
 <body>
 <?php
@@ -40,7 +47,7 @@
         $dialogMessage = "Item added to cart.";
     }
 ?>
-<div class="heading">
+<div class="heading" style="color: beige;">
     <h3>Our Menu</h3>
     <p><a href="home.php">Home </a> <span> / Menu</span></p>
 </div>
@@ -61,8 +68,8 @@
                     <input type="hidden" name="foodName" value="<?= $foodName ?>">
                     <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
                     <article class="food-product">
-                        <h3 style="text-align: center; font-size: 20px; color: #333;"><?= $foodName ?></h3>
-                        <p style="text-align: center; font-size: 16px; color: #666;">Price: $<?= $foodPrice ?></p>
+                        <h3 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h3>
+                        <p style="text-align: center; font-size: 20px; color: black;">Price: $<?= $foodPrice ?></p>
                         <figure>
                             <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
                         </figure>
@@ -101,6 +108,7 @@
 
 
 <style>
+
         /* Add border styling to the button */
         .btn-order {
             border: 2px solid #333; /* Change border color and width as desired */

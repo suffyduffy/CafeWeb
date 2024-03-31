@@ -27,7 +27,7 @@
       <div class="content">
          <h3>About Us</h3>
          <p>
-            Welcome to CoffeeCaz
+            Welcome to CoffeeCatz
             , a charming haven for coffee lovers and food enthusiasts! Nestled in the heart of NYP, our café was born from the collective passion and innovative spirit of four students from the Singapore Institute of Technology. 
             Our menu, crafted with meticulous care and a dash of creativity, from aromatic coffees brewed to perfection to mouth-watering pastries and wholesome meals. 
             Each item is a testament to our dedication to offering an exceptional dining experience, even on the go. 
@@ -67,7 +67,6 @@
       </div>
 
    </div>
-
 </section>
 
 <!-- steps section ends -->

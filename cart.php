@@ -56,8 +56,14 @@
         $conn->close();
     }
     ?>
+    <style>
+        body {
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+</style>
 </head>
-
 <body>
     <?php
     include "inc/header.inc.php";
@@ -87,9 +93,8 @@
                 $totalPrice += $foodPrice;
     ?>
             <div class="food-product">
-                <article class="food-product">
-                <h3 style="text-align: center; font-size: 20px; color: #333;"><?= $foodName ?></h3>
-                <p style="text-align: center; font-size: 16px; color: #666;">Price: $<?= $foodPrice ?></p>
+                <h3 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h3>
+                <p style="text-align: center; font-size: 20px; color: black;">Price: $<?= $foodPrice ?></p>
                 <figure>
                     <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
                 </figure>
@@ -99,14 +104,13 @@
                     <input type="hidden" name="foodName" value="<?= $foodName ?>">
                     <button type="submit" name="delete" class="btn-delete">Delete</button>
                 </form>
-                </article>
             </div>
 
         <?php
             }
             // Display the grand total after looping through all items
             echo '<div class="total-price-container">';
-            echo '<div class="total-price">Grand Total: $' . number_format($totalPrice, 2) . '</div>';
+            echo '<div class="total-price" style="font-size: 32px; color: black;">Grand Total: $' . number_format($totalPrice, 2) . '</div>';
             echo '<form action="process_checkout.php" method="post">';
             echo '<input type="hidden" name="member_id" value="' . $member_id . '">';
             echo '<input type="hidden" name="foodNames" value="' . implode("\n", $foodNames) . '">'; 
@@ -124,7 +128,11 @@
     <?php
     include "inc/footer.inc.php";
     ?>
+        <div class="loader">
+        <img src="images/loader.gif" alt="">
+    </div>
 </body>
+<script src="js/script.js"></script>
 
 <style>
         .btn-order-container {
@@ -138,7 +146,7 @@
             padding: 10px 20px; /* Adjust padding as needed */
             background-color: #fff; /* Button background color */
             color: #333; /* Button text color */
-            font-size: 18px; /* Adjust font size as needed */
+            font-size: 32px; /* Adjust font size as needed */
             font-weight: bold;
             margin: 2px;
             cursor: pointer;
@@ -147,9 +155,9 @@
 
         /* Add hover effect */
         .btn-order:hover {
-            background-color: #333; /* Change background color on hover */
+            background-color:#333; /* Change background color on hover */
             color: #fff; /* Change text color on hover */
-            border-color: #333; /* Change border color on hover */
+            border-color: #ebece6; /* Change border color on hover */
         }
                 /* Add border styling to the button */
         .btn-delete {

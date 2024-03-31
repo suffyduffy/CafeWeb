@@ -54,6 +54,13 @@
         $conn->close();
     }
     ?>
+    <style>
+        body {
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+</style>
 </head>
 
 <body>
@@ -66,7 +73,7 @@
     </div>
 
     <section class="products">
-        <h1 class="title">Order Summary</h1>
+        <h1 class="title">Order History</h1>
         <div class="box-container">
             <?php
             if ($select_result->num_rows > 0) {
@@ -76,15 +83,15 @@
                     $orderDate = $row["orderDate"];
                     ?>
                 <div class="food-product">
-                        <h3 style="text-align: center; font-size: 20px; color: #333;">Order Details</h3>
-                        <p style="text-align: center; font-size: 16px; color: #666;">Order On: <?= $orderDate ?></p>
-                        <h3 style="text-align: center; font-size: 16px; color: #666;">Total Price: $<?= $totalPrice ?></h3>
+                        <h3 style="text-align: center; font-size: 32px; color: #333;">Order Details</h3>
+                        <p style="text-align: center; font-size: 28px; color: #666;">Order On: <?= $orderDate ?></p>
+                        <h3 style="text-align: center; font-size: 28px; color: #666;">Total Price: $<?= $totalPrice ?></h3>
                         <ul style="list-style-type: none; padding: 0; text-align: center;">
                             <?php
                             // Split the line-separated string into an array
                             $foodNamesArray = explode("\n", $foodOrder);
                             foreach ($foodNamesArray as $foodName) {
-                                echo '<li style="font-size: 16px; color: #333;">' . $foodName . '</li>';
+                                echo '<li style="font-size: 24px; color: #333;">' . $foodName . '</li>';
                             }
                             ?>
                         </ul>
@@ -100,4 +107,34 @@
     <?php
     include "inc/footer.inc.php";
     ?>
+        <div class="loader">
+        <img src="images/loader.gif" alt="">
+    </div>
 </body>
+<script src="js/script.js"></script>
+<style>
+    .food-product {
+        border: 1px solid #333;
+        background-color: var(--white);
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease-in-out;
+        box-sizing: border-box;
+        border-radius: 8px;
+
+        background-image: url('images/Icons/menu_background.jpg'); /* Add your image path here */
+        background-size: cover; /* This will make sure that your background covers the entire element */
+        background-position: center; /* This will center your background image */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* This will center the text elements */
+    }
+
+    .food-product:hover {
+        box-shadow: 0 6px 30px rgba(255,0,0,0.7); /* Changes the shadow on hover */
+        }
+</style>
