@@ -550,7 +550,7 @@ section{
    margin-top: 1.5rem;
 }
 .contact-info h3 {
-   font-size: 32px;
+   font-size: 60px;
    color: #000; /* Change the color */
    margin-right: 8px; /* Add some spacing to the right of the icon */
  }
@@ -575,34 +575,6 @@ section{
 
 .contact .row .image img{
    width: 100%;
-}
-
-.contact .row form{
-   border:var(--border);
-   flex:1 1 40rem;
-   padding:2rem;
-   text-align: center;
-}
-
-.contact .row form h3{
-   font-size: 2.5rem;
-   color:var(--black);
-   text-transform: capitalize;
-   margin-bottom: 1rem;
-}
-
-.contact .row form .box{
-   width: 100%;
-   border:var(--border);
-   padding:1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
-   margin:.5rem 0;
-}
-
-.contact .row form textarea{
-   height: 15rem;
-   resize: none;
 }
 
 .steps .box-container{

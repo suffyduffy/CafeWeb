@@ -5,6 +5,13 @@
    session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
 ?>
+    <style>
+        body {
+            background-image: url('images/background_1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+</style>
 </head>
 <body>
 <?php

@@ -58,7 +58,7 @@
     ?>
     <style>
         body {
-            background-image: url('images/background.png');
+            background-image: url('images/background_1.png');
             background-size: cover;
             background-repeat: no-repeat;
         }
