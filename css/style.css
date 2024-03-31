@@ -179,47 +179,9 @@ section{
    }
 }
 
-.header .flex .profile{
-   width: 30rem;
-   position: absolute;
-   top:120%; right: 2rem;
-   background-color: var(--white);
-   border:var(--border);
-   padding:1.5rem;
-   text-align: center;
-   display: none;
-   animation: fadeIn .2s linear;
-}
-
-.header .flex .profile.active{
-   display: block;
-}
-
-.header .flex .profile .name{
-   font-size: 1.7rem;
-   margin-bottom: .5rem;
-}
-
-.header .flex .profile .account{
-   font-size: 1.7rem;
-   color:var(--light-color);
-   margin-top: 1.5rem;
-}
-
-.header .flex .profile .account a{
-   color:var(--black);
-   text-decoration: underline;
-}
-
-.header .flex .profile .account a:hover{
-   color:var(--Celadon);
-}
-
-
 #menu-btn{
    display: none;
 }
-
 
 /* Home Video START */
 .video-container { /* Ensures the video container fills the entire viewport and is fixed */

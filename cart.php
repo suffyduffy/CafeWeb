@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <?php
     session_start(); // Start the session at the beginning
@@ -222,3 +224,4 @@
             margin-top: 10px; /* Adjust margin as needed */
         }
     </style>
+</html>

@@ -1,11 +1,11 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    session_start(); // Start the session at the beginning
+    include "inc/head.inc.php";
+    ?>
 </head>
 <body>
 <?php
-    session_start(); // Start the session at the beginning
-    include "inc/head.inc.php";
     $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config) {
         $errorMsg = "Failed to read database config file.";

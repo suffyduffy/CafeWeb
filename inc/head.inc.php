@@ -5,7 +5,7 @@
 
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
    <link rel="stylesheet" href="path/to/swiper-bundle.min.css">
-   <script src="path/to/swiper-bundle.min.js"></script>
+   <script src="swiper-bundle.min.js"></script>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
