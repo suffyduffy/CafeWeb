@@ -5,10 +5,8 @@ if (!$config) {
     $errorMsg = "Failed to read database config file.";
     $success = false;
 } else {
-    // Get cartID and member_id from the form submission
-    $cartID = $_POST['cartID'];
-    $member_id = $_POST['member_id'];
-    $foodName = $_POST['foodName'];
+    // Get cartID from the form submission
+    $cartID = $_POST['cartID']; // Ensure this is being correctly assigned
 
     // Create a database connection
     $conn = new mysqli(
@@ -17,19 +15,22 @@ if (!$config) {
         $config['password'],
         $config['dbname']
     );
+
     // Check connection
     if ($conn->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
         $success = false;
     } else {
-        // Prepare the SQL statement to delete the item from the cart
-        $stmt = $conn->prepare("DELETE FROM cart WHERE foodName = ? AND member_id = ?");
-        // Bind parameters
-        $stmt->bind_param("si", $foodName, $member_id);
+        // Prepare the SQL statement to delete the item from the cart by cartID
+        $stmt = $conn->prepare("DELETE FROM cart WHERE cartID = ?");
+        // Bind parameters (cartID)
+        $stmt->bind_param("i", $cartID);
+
         // Execute the statement
         if ($stmt->execute()) {
-            echo "Item deleted successfully.";
+            // If you want to redirect immediately, make sure there's no output before this
             header("Location: cart.php");
+            exit(); // Ensure no further execution happens after a redirect
         } else {
             $errorMsg = "Error deleting item: " . $conn->error;
             $success = false;
@@ -40,3 +41,4 @@ if (!$config) {
     $conn->close();
 }
 ?>
+

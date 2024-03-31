@@ -21,13 +21,14 @@
    <div class="row">
 
       <div class="image">
-         <img src="images/Icons/Cafeimage.jpeg" alt="restaurant">
+         <img src="images/Icons/Cafeimage2.jpeg" alt="restaurant">
       </div>
 
       <div class="content">
          <h3>About Us</h3>
          <p>
-            Welcome to CoffeeCat, a charming haven for coffee lovers and food enthusiasts! Nestled in the heart of NYP, our café was born from the collective passion and innovative spirit of four students from the Singapore Institute of Technology. 
+            Welcome to CoffeeCaz
+            , a charming haven for coffee lovers and food enthusiasts! Nestled in the heart of NYP, our café was born from the collective passion and innovative spirit of four students from the Singapore Institute of Technology. 
             Our menu, crafted with meticulous care and a dash of creativity, from aromatic coffees brewed to perfection to mouth-watering pastries and wholesome meals. 
             Each item is a testament to our dedication to offering an exceptional dining experience, even on the go. 
             At CoffeeCat, we believe in the power of good food and great coffee to brighten your day, and we're excited to share our passion with you, one takeaway at a time.
@@ -96,7 +97,7 @@
 
          <div class="swiper-slide slide">
             <img src="images/Icons/Guy2profile.png" alt="guy2profile">
-            <p>This store really provides real quality food</p>
+            <p>Provides real quality food</p>
             <div class="stars">
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
@@ -109,7 +110,7 @@
 
          <div class="swiper-slide slide">
             <img src="images/Icons/Girlprofile.png" alt="girlprofile">
-            <p>Amazing choices of drinks and food to takeaway</p>
+            <p>Amazing choices to takeaway</p>
             <div class="stars">
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
@@ -135,7 +136,7 @@
 
          <div class="swiper-slide slide">
             <img src="images/Icons/Guyprofile.png" alt="guyprofile">
-            <p>I would always love ordering the pizzas here</p>
+            <p>I love ordering the pizzas here!</p>
             <div class="stars">
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
@@ -148,7 +149,7 @@
 
          <div class="swiper-slide slide">
             <img src="images/Icons/Girlprofile.png" alt="girlprofile">
-            <p>I love the cheesecake</p>
+            <p>I love the cheesecake!</p>
             <div class="stars">
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
@@ -156,7 +157,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>Sally</h3>
+            <h3>Shenaz</h3>
          </div>
 
       </div>

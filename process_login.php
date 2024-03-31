@@ -52,11 +52,6 @@ if ($success) {
         $_SESSION['lname'] = $lname; // Store last name in session
         $_SESSION['address'] = $address; // Store address in session
 
-        $_SESSION['email'] = $email; // Store email in session
-        $_SESSION['fname'] = $fname; // Store first name in session
-        $_SESSION['lname'] = $lname; // Store last name in session
-        $_SESSION['address'] = $address; // Store address in session
-
         echo "Login Successful";
         header("Location: home.php");
         exit();
