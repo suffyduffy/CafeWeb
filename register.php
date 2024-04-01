@@ -17,9 +17,10 @@
 <?php
    include "inc/header.inc.php";
 ?>
+<main>
 <section class="form-container">
    <form action="process_register.php" method="post">
-      <h3>Register Now</h3>
+      <h1 style="font-size: 40px;">Register Now</h1>
     <input type="text" name="fname" placeholder="Enter your name" class="box" maxlength="50">
 
     <input type="text" name="lname" required placeholder="Enter your last name" class="box" maxlength="50">
@@ -37,6 +38,7 @@
     <p>Already have an account? <a href="login.php">Login Now</a></p>
 </form>
 </section>
+</main>
 
     <?php 
         include "inc/footer.inc.php"; 

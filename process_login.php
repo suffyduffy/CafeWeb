@@ -57,18 +57,18 @@ if ($success) {
         exit();
     } else {
         // User authentication failed
-        echo '<div class="content">';
-        echo '<h3>The following input errors were detected:</h3>';
-        echo '<p>' . $errorMsg . '</p>';
-        echo '<a href="login.php" class="btn-return-signup">Log In</a>';
+        echo '<div class="error-message">';
+        echo '<h1 style="text-align: center; font-size: 40px; color: black;">The following input errors were detected:</h1>';
+        echo '<p style="text-align: center; font-size: 28px; color: black;">' . $errorMsg . '</p>';
+        echo '<a href="login.php" class="btn-return-signup" style="text-align: center; font-size: 28px;">Return to Log In</a>';
         echo '</div>';
         $_SESSION['login_error'] = $errorMsg;
     }
 } else {
-    echo '<div class="content">';
-    echo '<h3>The following input errors were detected:</h3>';
-    echo '<p>' . $errorMsg . '</p>';
-    echo '<a href="login.php" class="btn-return-signup">Return to Log In</a>';
+    echo '<div class="error-message">';
+    echo '<h1 style="text-align: center; font-size: 40px; color: black;">The following input errors were detected:</h1>';
+    echo '<p style="text-align: center; font-size: 28px; color: black;">' . $errorMsg . '</p>';
+    echo '<a href="login.php" class="btn-return-signup" style="text-align: center; font-size: 28px;">Return to Log In</a>';
     echo '</div>';
     $_SESSION['login_error'] = $errorMsg;
     exit();

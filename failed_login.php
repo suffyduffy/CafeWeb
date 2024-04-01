@@ -17,16 +17,17 @@
 <?php
    include "inc/header.inc.php";
 ?>
+<main>
 <section class="about">
     <div class="row">
         <div class="content">
-            <h3>Login Failed</h3>
-            <p>Please recheck your email & password</p>
-            <a href="login.php" class="btn">Login</a>
+            <h1 style="text-align: center; font-size: 40px; color: black;">Login Failed</h1>
+            <p style="text-align: center; font-size: 36px; color: black;">Please recheck your email & password</p>
+            <a href="login.php" class="btn" style="text-align: center; font-size: 28px;">Login</a>
         </div>
     </div>
 </section>
-
+</main>
     <?php 
         include "inc/footer.inc.php"; 
     ?>

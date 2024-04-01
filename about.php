@@ -58,7 +58,7 @@
 
       <div class="box">
          <img src="images/Icons/Choose Order.png" alt="chooseorder">
-         <h3>Choose order</h3>
+         <h2 style="text-align: center; font-size: 24px; color: black;">Choose order</h2>
          <p>Add to cart</p>
       </div>
 
@@ -138,7 +138,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>Steve jobs</h3>
+            <h2 style="text-align: center; font-size: 32px; color: black;">Steve jobs</h2>
          </div>
 
          <div class="swiper-slide slide">

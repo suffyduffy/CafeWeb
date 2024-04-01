@@ -72,7 +72,7 @@
                     <input type="hidden" name="foodName" value="<?= $foodName ?>">
                     <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
                     <article class="food-product">
-                        <h3 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h3>
+                        <h2 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h2>
                         <p style="text-align: center; font-size: 20px; color: black;">Price: $<?= $foodPrice ?></p>
                         <figure>
                             <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>

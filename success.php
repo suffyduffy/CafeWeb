@@ -17,15 +17,17 @@
 <?php
    include "inc/header.inc.php";
 ?>
+<main>
 <section class="about">
     <div class="row">
         <div class="content">
-            <h3>Registration Successful</h3>
-            <p>Thanks for joining us!</p>
-            <a href="login.php" class="btn">Log In</a>
+            <h1 style="text-align: center; font-size: 40px; color: black;">Registration Successful</h1>
+            <p style="text-align: center; font-size: 36px; color: black;">Thank you for joining us!</p>
+            <a href="login.php" class="btn" style="text-align: center; font-size: 28px;">Log In</a>
         </div>
     </div>
 </section>
+</main>
 
     <?php 
         include "inc/footer.inc.php"; 

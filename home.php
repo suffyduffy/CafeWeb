@@ -111,22 +111,22 @@
 
       <a href="menu.php" class="box">
          <img src="images/Icons/apps.png" alt="Apps">
-         <h3>Appetisers</h3>
+         <h2 style="font-size: 28px;">Appetisers</h2>
       </a>
    
       <a href="menu.php" class="box">
          <img src="images/Icons/mainD.png" alt="Entre">
-         <h3>Main</h3>
+         <h2 style="font-size: 28px;">Main</h2>
       </a>
    
       <a href="menu.php" class="box">
          <img src="images/Icons/drinks.png" alt="Drinks">
-         <h3>Beverages</h3>
+         <h2 style="font-size: 28px;">Beverages</h2>
       </a>
    
       <a href="menu.php" class="box">
          <img src="images/Icons/desserts.png" alt="Seasonal">
-         <h3>Desserts</h3>
+         <h2 style="font-size: 28px;">Desserts</h2>
       </a>
 
    </div>
