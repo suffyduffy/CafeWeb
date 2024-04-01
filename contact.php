@@ -103,7 +103,7 @@
 
             .stars i {
             color: #e6e6e6;
-            font-size: 40px;
+            font-size: 28px;
             cursor: pointer;
             transition: color 0.2s ease;
             }
