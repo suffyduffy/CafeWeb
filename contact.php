@@ -75,6 +75,42 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        .rating-box {
+            position: relative;
+            background: #fff;
+            padding: 25px 50px 35px;
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            display: flex; /* Add display flex */
+            flex-direction: column; /* Align items vertically */
+            align-items: center; /* Center items horizontally */
+            }
+
+            .rating-box header {
+            font-size: 22px;
+            color: black;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+            }
+
+            .rating-box .stars {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            }
+
+            .stars i {
+            color: #e6e6e6;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            }
+
+            .stars i.active {
+            color: #FFFF00;
+            }
     </style>
 </head>
 
@@ -100,17 +136,16 @@
                 <div class="form-group">
                     <textarea id="message" name="message" placeholder="Message(optional)"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="rating">Rate Us!</label>
-                    <select id="rating" name="rating">
-                        <option value="" selected disabled>Select a rating</option>
-                        <option value="1">1 (Bad)</option>
-                        <option value="2">2 (Fair)</option>
-                        <option value="3">3 (Average)</option>
-                        <option value="4">4 (Good)</option>
-                        <option value="5">5 (Amazing)</option>
-                    </select>
-                </div>
+                <div class="rating-box">
+                  <header>Rate Us!</header>
+                  <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  </div>
+               </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -134,6 +169,21 @@
             document.getElementById('dialog').style.display = 'block';
             alert('Thank you for your review!')
         });
+
+                  // Select all elements with the "i" tag and store them in a NodeList called "stars"
+         const stars = document.querySelectorAll(".stars i");
+         // Loop through the "stars" NodeList
+         stars.forEach((star, index1) => {
+         // Add an event listener that runs a function when the "click" event is triggered
+         star.addEventListener("click", () => {
+            // Loop through the "stars" NodeList Again
+            stars.forEach((star, index2) => {
+               // Add the "active" class to the clicked star and any stars with a lower index
+               // and remove the "active" class from any stars with a higher index
+               index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+            });
+         });
+         });
     </script>
 
 </body>

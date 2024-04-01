@@ -35,11 +35,11 @@
       <div class="content">
          <h3>About Us</h3>
          <p>
-            Welcome to CoffeeCatz
+            Welcome to Coffee Catz
             , a charming haven for coffee lovers and food enthusiasts! Nestled in the heart of NYP, our café was born from the collective passion and innovative spirit of four students from the Singapore Institute of Technology. 
             Our menu, crafted with meticulous care and a dash of creativity, from aromatic coffees brewed to perfection to mouth-watering pastries and wholesome meals. 
             Each item is a testament to our dedication to offering an exceptional dining experience, even on the go. 
-            At CoffeeCat, we believe in the power of good food and great coffee to brighten your day, and we're excited to share our passion with you, one takeaway at a time.
+            At Coffee Catz, we believe in the power of good food and great coffee to brighten your day, and we're excited to share our passion with you, one takeaway at a time.
          </p>
          <a href="menu.php" class="btn">our menu</a>
       </div>
