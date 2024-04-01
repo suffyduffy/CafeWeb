@@ -6,18 +6,19 @@
    include "inc/head.inc.php";
 ?>
     <style>
-        body {
-            background-image: url('images/background_1.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+    body {
+        background-image: url('images/background_6.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0; /* Ensure there's no default margin */
+    }
 </style>
 </head>
 <body>
 <?php
     include "inc/header.inc.php";
 ?>
-
+<main>
 <div class="heading">
    <h3>about us</h3>
    <p><a href="home.php">Home </a> <span> / About</span></p>
@@ -173,6 +174,7 @@
    </div>
 
 </section>
+</main>
 
 <?php
    include "inc/footer.inc.php";

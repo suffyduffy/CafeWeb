@@ -7,7 +7,7 @@
 ?>
 <style>
     body {
-        background-image: url('images/background_1.png');
+        background-image: url('images/background_6.png');
         background-size: cover;
         background-repeat: no-repeat;
         margin: 0; /* Ensure there's no default margin */
@@ -53,6 +53,7 @@
       <?php
          include "inc/header.inc.php";
       ?>
+      <main>
       <section class="video-section">
          <div class="video-container"> 
             <video autoplay loop muted playsinline id="background-video">
@@ -124,13 +125,14 @@
       </a>
    
       <a href="menu.php" class="box">
-         <img src="images/Icons/desserts.png" alt="Desserts">
+         <img src="images/Icons/desserts.png" alt="Seasonal">
          <h3>Desserts</h3>
       </a>
 
    </div>
 
 </section>
+</main>
 <?php
    include "inc/footer.inc.php";
 ?>

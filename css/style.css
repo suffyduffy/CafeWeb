@@ -122,7 +122,7 @@ section{
 
 .heading p span{
    font-size: 2rem;
-   color:var(--red);
+   color:var(--black);
 }
 
 .heading p a:hover{
@@ -171,10 +171,6 @@ section{
    color:var(--Celadon);
 }
 
-.header .flex .navbar a {
-   margin: 2rem;
-   font-weight: bold; /* Add this line */
-}
 
 @keyframes fadeIn {
    0%{

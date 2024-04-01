@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <?php
     session_start(); // Start the session at the beginning
@@ -55,11 +57,12 @@
     }
     ?>
     <style>
-        body {
-            background-image: url('images/background_1.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+    body {
+        background-image: url('images/background_6.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0; /* Ensure there's no default margin */
+    }
 </style>
 </head>
 
@@ -67,6 +70,7 @@
     <?php
     include "inc/header.inc.php";
     ?>
+    <main>
     <div class="heading">
         <h3>Orders</h3>
         <p><a href="home.php">Home </a> <span> / Orders</span></p>
@@ -104,6 +108,7 @@
             ?>
         </div>
     </section>
+    </main>
     <?php
     include "inc/footer.inc.php";
     ?>
@@ -138,3 +143,4 @@
         box-shadow: 0 6px 30px rgba(255,0,0,0.7); /* Changes the shadow on hover */
         }
 </style>
+</html>
