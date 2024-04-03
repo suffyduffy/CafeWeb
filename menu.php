@@ -97,9 +97,9 @@
     <?php
         include "inc/footer.inc.php";
     ?>
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="images/loader.gif" alt="">
-    </div>
+    </div> -->
 </body>
 
 <script src="js/script.js"></script>

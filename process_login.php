@@ -57,19 +57,31 @@ if ($success) {
         exit();
     } else {
         // User authentication failed
-        echo '<div class="error-message">';
-        echo '<h1 style="text-align: center; font-size: 40px; color: black;">The following input errors were detected:</h1>';
-        echo '<p style="text-align: center; font-size: 28px; color: black;">' . $errorMsg . '</p>';
-        echo '<a href="login.php" class="btn-return-signup" style="text-align: center; font-size: 28px;">Return to Log In</a>';
+        echo '<main>';
+        echo '<section class="about">';
+        echo '<div class="row">';
+        echo '<div class="content">';
+        echo '<h1 style="text-align: center; font-size: 40px; color: black;">Login failed, following errors detected</h1>';
+        echo '<p style="text-align: center; font-size: 32px; color: black;">' . $errorMsg . '</p>';
+        echo '<a href="login.php" class="btn" style="text-align: center; font-size: 28px;">Login Again</a>';
         echo '</div>';
+        echo '</div>';
+        echo '</section>';
+        echo '</main>';
         $_SESSION['login_error'] = $errorMsg;
     }
 } else {
-    echo '<div class="error-message">';
-    echo '<h1 style="text-align: center; font-size: 40px; color: black;">The following input errors were detected:</h1>';
-    echo '<p style="text-align: center; font-size: 28px; color: black;">' . $errorMsg . '</p>';
-    echo '<a href="login.php" class="btn-return-signup" style="text-align: center; font-size: 28px;">Return to Log In</a>';
+    echo '<main>';
+    echo '<section class="about">';
+    echo '<div class="row">';
+    echo '<div class="content">';
+    echo '<h1 style="text-align: center; font-size: 40px; color: black;">Login failed, following errors detected</h1>';
+    echo '<p style="text-align: center; font-size: 32px; color: black;">' . $errorMsg . '</p>';
+    echo '<a href="login.php" class="btn" style="text-align: center; font-size: 28px;">Login Again</a>';
     echo '</div>';
+    echo '</div>';
+    echo '</section>';
+    echo '</main>';
     $_SESSION['login_error'] = $errorMsg;
     exit();
 }

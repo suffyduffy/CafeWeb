@@ -20,7 +20,7 @@ function sanitize_input($data) {
 
 // Validate first name
 if (empty($_POST["fname"])) {
-    $errorMsg .= "Don't have a first name? Weirdo.<br>";
+    $errorMsg .= "First name is required.<br>";
     $success = false;
 } else {
     $firstName = sanitize_input($_POST["fname"]);
@@ -89,11 +89,17 @@ if ($success) {
     header("Location: success.php");
 
 } else {
-    echo '<div class="error-message">';
-    echo '<h1 style="text-align: center; font-size: 40px; color: black;">The following input errors were detected:</h1>';
-    echo '<p style="text-align: center; font-size: 28px; color: black;">' . $errorMsg . '</p>';
-    echo '<a href="register.php" class="btn-return-signup" style="text-align: center; font-size: 28px;">Return to Sign Up</a>';
+    echo '<main>';
+    echo '<section class="about">';
+    echo '<div class="row">';
+    echo '<div class="content">';
+    echo '<h1 style="text-align: center; font-size: 40px; color: black;">Registration Failed</h1>';
+    echo '<p style="text-align: center; font-size: 32px; color: black;">' . $errorMsg . '</p>';
+    echo '<a href="login.php" class="btn" style="text-align: center; font-size: 28px;">Register Again</a>';
     echo '</div>';
+    echo '</div>';
+    echo '</section>';
+    echo '</main>';
 }
 
 // Helper function to write the member data to the database.
