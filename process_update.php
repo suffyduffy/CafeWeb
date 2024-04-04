@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php
-        include "inc/head.inc.php";
-    ?>
-</head>
-<body>
 <?php
 session_start();
 $lastName = $email = $password = $confirmPassword = $address = $errorMsg = "";
@@ -81,17 +73,9 @@ if ($success) {
     header("Location: home.php");
 
 } else {
-    echo '<main>';
-    echo '<section class="about">';
-    echo '<div class="row">';
-    echo '<div class="content">';
-    echo '<h1 style="text-align: center; font-size: 40px; color: black;">Update failed, following errors detected</h1>';
-    echo '<p style="text-align: center; font-size: 32px; color: black;">' . $errorMsg . '</p>';
-    echo '<a href="update_profile.php" class="btn" style="text-align: center; font-size: 28px;">Update Again</a>';
-    echo '</div>';
-    echo '</div>';
-    echo '</section>';
-    echo '</main>';
+    echo "<h4>The following input errors were detected:</h4>";
+    echo "<p>" . $errorMsg . "</p>";
+    echo '<a href="update_profile.php"><button style="background-color: red; color: white;">Return to Update Profile</button></a>';
 }
 
 // Helper function to update the member data in the database.
@@ -131,5 +115,3 @@ function updateMemberInDB()
     }
 }
 ?>
-</body>
-</html>

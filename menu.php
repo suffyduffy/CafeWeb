@@ -72,7 +72,7 @@
                     <input type="hidden" name="foodName" value="<?= $foodName ?>">
                     <input type="hidden" name="foodPrice" value="<?= $foodPrice ?>">
                     <article class="food-product">
-                        <h2 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h2>
+                        <h3 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h3>
                         <p style="text-align: center; font-size: 20px; color: black;">Price: $<?= $foodPrice ?></p>
                         <figure>
                             <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>
@@ -97,9 +97,9 @@
     <?php
         include "inc/footer.inc.php";
     ?>
-    <!-- <div class="loader">
+    <div class="loader">
         <img src="images/loader.gif" alt="">
-    </div> -->
+    </div>
 </body>
 
 <script src="js/script.js"></script>

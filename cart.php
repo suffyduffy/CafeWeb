@@ -95,7 +95,7 @@
                 $totalPrice += $foodPrice;
     ?>
             <div class="food-product">
-                <h2 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h2>
+                <h3 style="text-align: center; font-size: 24px; color: black;"><?= $foodName ?></h3>
                 <p style="text-align: center; font-size: 20px; color: black;">Price: $<?= $foodPrice ?></p>
                 <figure>
                     <img src="images/Food/<?= $foodName ?>.png" alt="<?= $foodName ?>" class="food-thumbnail" width="200" height="200"/>

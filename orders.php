@@ -87,7 +87,7 @@
                     $orderDate = $row["orderDate"];
                     ?>
                 <div class="food-product">
-                        <h2 style="text-align: center; font-size: 32px; color: #333;">Order Details</h2>
+                        <h3 style="text-align: center; font-size: 32px; color: #333;">Order Details</h3>
                         <p style="text-align: center; font-size: 28px; color: #666;">Order On: <?= $orderDate ?></p>
                         <h3 style="text-align: center; font-size: 28px; color: #666;">Total Price: $<?= $totalPrice ?></h3>
                         <ul style="list-style-type: none; padding: 0; text-align: center;">

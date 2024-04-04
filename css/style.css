@@ -295,10 +295,6 @@ section{
    background-color: var(--rocket-metallic);
 }
 
-.category .box-container .box:hover img{
-   filter: invert();
-}
-
 .category .box-container .box:hover h3{
    color:var(--white);
 }

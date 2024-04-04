@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php
-   session_start(); 
+   session_start(); // Start the session at the beginning
    include "inc/head.inc.php";
 ?>
     <style>
@@ -10,13 +10,9 @@
         background-image: url('images/background_6.png');
         background-size: cover;
         background-repeat: no-repeat;
-        margin: 0; 
+        margin: 0; /* Ensure there's no default margin */
     }
-    .content .btn {
-         background-color: #E7BEBB; /* Beige background */
-         color: #333; /* Dark text color for contrast */
-      }
-   </style>
+</style>
 </head>
 <body>
 <?php
@@ -37,7 +33,7 @@
       </div>
 
       <div class="content">
-         <h1>About Us</h1>
+         <h3>About Us</h3>
          <p>
             Welcome to Coffee Catz
             , a charming haven for coffee lovers and food enthusiasts! Nestled in the heart of NYP, our café was born from the collective passion and innovative spirit of four students from the Singapore Institute of Technology. 
@@ -50,9 +46,13 @@
    </div>
 </section>
 
+<!-- about section ends -->
+
+<!-- steps section starts  -->
+
 <section class="steps">
 
-   <h2 class="title">Steps to taste our food!</h2>
+   <h1 class="title">Steps to taste our food!</h1>
 
    <div class="box-container">
 
@@ -77,9 +77,13 @@
    </div>
 </section>
 
+<!-- steps section ends -->
+
+<!-- reviews section starts  -->
+
 <section class="reviews">
 
-   <h2 class="title">customer's reviews</h2>
+   <h1 class="title">customer's reviews</h1>
 
    <div class="swiper reviews-slider">
 
@@ -93,6 +97,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
             <h3>Harry Styles</h3>
          </div>
@@ -105,7 +110,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
             <h3>James Cook</h3>
          </div>
@@ -118,6 +123,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
             <h3>Lisa</h3>
          </div>
@@ -130,9 +136,9 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
-            <h2>Steve jobs</h2>
+            <h3>Steve jobs</h3>
          </div>
 
          <div class="swiper-slide slide">
@@ -143,6 +149,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
             <h3>Elon Musk</h3>
          </div>
@@ -155,7 +162,7 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
             </div>
             <h3>Shenaz</h3>
          </div>
@@ -202,6 +209,7 @@ var swiper = new Swiper(".reviews-slider", {
 });
 
 </script>
+
 
 </body>
 </html>
